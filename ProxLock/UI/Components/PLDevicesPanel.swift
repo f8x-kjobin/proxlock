@@ -16,12 +16,18 @@ struct PLDevicesPanel: View {
             Spacer()
 
             Button {
-                if !errored { withAnimation(.bouncy) { expanded.toggle() } }
+                if !errored {
+                    withAnimation(.bouncy) { expanded.toggle() }
+                }
             } label: { Image(systemName: expanded ? "chevron.down" : "chevron.up") }
                 .buttonStyle(.plain)
         }
         .contentShape(Rectangle())
-        .onTapGesture { if !errored { withAnimation(.bouncy) { expanded.toggle() } } }
+        .onTapGesture {
+            if !errored {
+                withAnimation(.bouncy) { expanded.toggle() }
+            }
+        }
     }
 
     var body: some View {
